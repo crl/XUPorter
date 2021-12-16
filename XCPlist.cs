@@ -5,7 +5,7 @@ using System.IO;
 
 namespace UnityEditor.XCodeEditor 
 {
-	public class XCPlist
+	public partial class XCPlist
 	{
 		string plistPath;
 		bool plistModified;
@@ -23,10 +23,13 @@ namespace UnityEditor.XCodeEditor
 		const string PlistName = "name";
 		const string PlistSchemes = "schemes";
 
-		public XCPlist(string plistPath)
+		public  XCPlist(string plistPath)
 		{
 			this.plistPath = plistPath;
+			Init();
 		}
+
+		partial void Init();
 
 		public void Process(Hashtable plist)
 		{
